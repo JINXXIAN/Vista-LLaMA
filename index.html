@@ -80,25 +80,24 @@
   </style>
 
   <style>
+        .subfigure img {
+            width: 70%; /* 设置图片宽度为页面宽度的70% */
+            height: auto;
+            display: block;
+            margin: 0 auto; /* 水平居中图片 */
+        }
+        .subfigure-caption {
+            text-align: center; /* 居中标题文字 */
+            margin-top: 5px;
+        }
+        .subtitle {
+            max-width: 75%;
+            margin: 0 auto;
+            text-align: left;
+        }
         .figure-container {
             text-align: center;
             margin-bottom: 20px;
-        }
-        .subfigure {
-            margin-bottom: 10px;
-        }
-        .subfigure img {
-            width: 90%;
-            height: auto;
-        }
-        .subfigure-caption {
-            margin-top: 5px;
-            font-style: italic;
-        }
-        .figure-caption {
-            text-align: center;
-            font-weight: bold;
-            margin-top: 10px;
         }
     </style>
 </head>
@@ -365,10 +364,9 @@ We reach an accuracy of 60.7 on the zero-shot NExT-QA and 60.5 on the zero-shot 
 
         <!-- 总标题 -->
         <h2 class="subtitle" style="max-width: 75%; margin: 0 auto; text-align: left;">
-        <br><strong>Comparison of attention weights</strong> for varing context lengths in different layers. Lighter colors represent higher weights. To improve clarity, we have combined visual token weights into the first four tokens. We recommend zooming in for optimal viewing.
-    </h2>
+            <br><strong>Comparison of attention weights</strong> for varing context lengths in different layers. Lighter colors represent higher weights. To improve clarity, we have combined visual token weights into the first four tokens. We recommend zooming in for optimal viewing.
+        </h2>
     </div>
-
 
 
 <!-- 第一组 -->
