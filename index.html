@@ -60,7 +60,24 @@
         }
   </style>
 
-  
+  <style>
+    .centered-table {
+      margin-left: auto;
+      margin-right: auto;
+    }
+    table {
+      border-collapse: collapse;
+      width: 80%; /* 根据需要调整 */
+      text-align: center;
+    }
+    th, td {
+      border: 1px solid black;
+      padding: 8px;
+    }
+    thead {
+      background-color: #f2f2f2;
+    }
+  </style>
 </head>
 <body>
 
@@ -203,104 +220,109 @@ We reach an accuracy of 60.7 on the zero-shot NExT-QA and 60.5 on the zero-shot 
 </div>
 </section>
 
-<table>
-  <thead>
-    <tr>
-      <th rowspan="2">Method</th>
-      <th colspan="2">NExT-QA</th>
-      <th colspan="2">MSVD-QA</th>
-      <th colspan="2">MSRVTT-QA</th>
-      <th colspan="2">ActivityNet-QA</th>
-    </tr>
-    <tr>
-      <th>Accuracy</th>
-      <th>Score</th>
-      <th>Accuracy</th>
-      <th>Score</th>
-      <th>Accuracy</th>
-      <th>Score</th>
-      <th>Accuracy</th>
-      <th>Score</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>FrozenBiLM~(yang2022zero)</td>
-      <td>-</td>
-      <td>-</td>
-      <td>32.2</td>
-      <td>-</td>
-      <td>16.8</td>
-      <td>-</td>
-      <td>24.7</td>
-      <td>-</td>
-    </tr>
-    <tr>
-      <td>Video Chat~(li2023videochat)</td>
-      <td><u>56.2</u></td>
-      <td><u>3.2</u></td>
-      <td>56.3</td>
-      <td>2.8</td>
-      <td>45.0</td>
-      <td>2.5</td>
-      <td>26.5</td>
-      <td>2.2</td>
-    </tr>
-    <tr>
-      <td>LLaMA Adapter~(zhang2023llama)</td>
-      <td>-</td>
-      <td>-</td>
-      <td>54.9</td>
-      <td>3.1</td>
-      <td>43.8</td>
-      <td>2.7</td>
-      <td>34.2</td>
-      <td><u>2.7</u></td>
-    </tr>
-    <tr>
-      <td>Video LLaMA~(zhang2023video)</td>
-      <td>-</td>
-      <td>-</td>
-      <td>51.6</td>
-      <td>2.5</td>
-      <td>29.6</td>
-      <td>1.8</td>
-      <td>12.4</td>
-      <td>1.1</td>
-    </tr>
-    <tr>
-      <td>MovieChat~(song2023moviechat)</td>
-      <td>49.9</td>
-      <td>2.7</td>
-      <td>61.0</td>
-      <td>2.9</td>
-      <td><u>49.7</u></td>
-      <td><u>2.8</u></td>
-      <td><b>51.5</b></td>
-      <td>3.1</td>
-    </tr>
-    <tr>
-      <td>Video-ChatGPT~(maaz2023video)</td>
-      <td>54.6</td>
-      <td><u>3.2</u></td>
-      <td><u>64.9</u></td>
-      <td><u>3.3</u></td>
-      <td>49.3</td>
-      <td><u>2.8</u></td>
-      <td>35.2</td>
-      <td><u>2.7</u></td>
-    </tr>
-    <tr>
-      <td><b>Model (Ours)</b></td>
-      <td><b>60.7</b></td>
-      <td><b>3.4</b></td>
-      <td><b>65.3</b></td>
-      <td><b>3.6</b></td>
-      <td><b>60.5</b></td>
-      <td><b>3.3</b></td>
-      <td><u>48.3</u></td>
-      <td><b>3.3</b></td>
-    </tr>
+
+<section class="hero is-small">
+    <div class="hero-body">
+      <div class="container">
+        <h2 class="title is-2 has-text-centered">Comparison with SOTA</h2>
+        <table class="centered-table">
+          <thead>
+            <tr>
+              <th rowspan="2">Method</th>
+              <th colspan="2">NExT-QA</th>
+              <th colspan="2">MSVD-QA</th>
+              <th colspan="2">MSRVTT-QA</th>
+              <th colspan="2">ActivityNet-QA</th>
+            </tr>
+            <tr>
+              <th>Accuracy</th>
+              <th>Score</th>
+              <th>Accuracy</th>
+              <th>Score</th>
+              <th>Accuracy</th>
+              <th>Score</th>
+              <th>Accuracy</th>
+              <th>Score</th>
+            </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>FrozenBiLM</td>
+            <td>-</td>
+            <td>-</td>
+            <td>32.2</td>
+            <td>-</td>
+            <td>16.8</td>
+            <td>-</td>
+            <td>24.7</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>Video Chat</td>
+            <td><u>56.2</u></td>
+            <td><u>3.2</u></td>
+            <td>56.3</td>
+            <td>2.8</td>
+            <td>45.0</td>
+            <td>2.5</td>
+            <td>26.5</td>
+            <td>2.2</td>
+          </tr>
+          <tr>
+            <td>LLaMA Adapter</td>
+            <td>-</td>
+            <td>-</td>
+            <td>54.9</td>
+            <td>3.1</td>
+            <td>43.8</td>
+            <td>2.7</td>
+            <td>34.2</td>
+            <td><u>2.7</u></td>
+          </tr>
+          <tr>
+            <td>Video LLaMA</td>
+            <td>-</td>
+            <td>-</td>
+            <td>51.6</td>
+            <td>2.5</td>
+            <td>29.6</td>
+            <td>1.8</td>
+            <td>12.4</td>
+            <td>1.1</td>
+          </tr>
+          <tr>
+            <td>MovieChat</td>
+            <td>49.9</td>
+            <td>2.7</td>
+            <td>61.0</td>
+            <td>2.9</td>
+            <td><u>49.7</u></td>
+            <td><u>2.8</u></td>
+            <td><b>51.5</b></td>
+            <td>3.1</td>
+          </tr>
+          <tr>
+            <td>Video-ChatGPT</td>
+            <td>54.6</td>
+            <td><u>3.2</u></td>
+            <td><u>64.9</u></td>
+            <td><u>3.3</u></td>
+            <td>49.3</td>
+            <td><u>2.8</u></td>
+            <td>35.2</td>
+            <td><u>2.7</u></td>
+          </tr>
+          <tr>
+            <td><b>Model (Ours)</b></td>
+            <td><b>60.7</b></td>
+            <td><b>3.4</b></td>
+            <td><b>65.3</b></td>
+            <td><b>3.6</b></td>
+            <td><b>60.5</b></td>
+            <td><b>3.3</b></td>
+            <td><u>48.3</u></td>
+            <td><b>3.3</b></td>
+          </tr>
   </tbody>
 </table>
 
