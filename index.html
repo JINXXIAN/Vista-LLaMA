@@ -149,34 +149,6 @@
 
 
 
-<section class="section hero is-light">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-half">
-          <h2 class="title is-3">Abstract</h2>
-          <div class="content has-text-justified">
-            <p>
-              Recent advances in large video-language models have displayed promising outcomes in video comprehension. Current approaches straightforwardly convert video into language tokens and employ large language models for multi-modal tasks.
-However, this method often leads to the generation of irrelevant content, commonly known as ``hallucination'', as the length of the text increases and the impact of the video diminishes.
-To address this problem, we propose Vista-LLaMA, a novel framework that maintains the consistent distance between all visual tokens and any language tokens, irrespective of the generated text length.
-Vista-LLaMA omits relative position encoding when determining attention weights between visual and text tokens, retaining the position encoding for text and text tokens. This amplifies the effect of visual tokens on text generation, especially when the relative distance is longer between visual and text tokens. The proposed attention mechanism significantly reduces the chance of producing irrelevant text related to the video content.
-Furthermore, we present a sequential visual projector that projects the current video frame into tokens of language space with the assistance of the previous frame. This approach not only captures the temporal relationship within the video, but also allows less visual tokens to encompass the entire video.
-Our approach significantly outperforms various previous methods(e.g., Video-ChatGPT, MovieChat) on four challenging open-ended video question answering benchmarks. 
-We reach an accuracy of 60.7 on the zero-shot NExT-QA and 60.5 on the zero-shot MSRVTT-QA, setting a new state-of-the-art performance.
-            </p>
-          </div>
-        </div>
-        <div class="column is-half">
-          <h2 class="title is-2 has-text-centered">Our Framework</h2>
-          <!-- 框架图像和介绍文字放在这里 -->
-          <img src="static/images/banner.png" alt="MY ALT TEXT" class="centered-image">
-          <h2 class="subtitle">
-            <br>The framework of <strong>Vista-LLaMA</strong>. The visual encoder and large language model are both frozen during training, while the projector is trainable to map video into the language's space. The attention operation in each layer is present on the right part. Only the text tokens are applied with rotary position embedding to include relative distance information. The attention weights between visual and language tokens are calculated without the rotary position embedding. The casual mask is applied to the bottom-right attention weights. 
-          </h2>
-        </div>
-      </div>
-    </div>
-  </section>
 
 <!-- Paper abstract -->
 <section class="section hero is-light">
